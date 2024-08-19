@@ -3,6 +3,10 @@ using UnityEngine;
 
 [CustomEditor(typeof(PropTag))]
 public class PropTagEditor : Editor {
+
+    private float m_animT = 0;
+    private Texture2D m_randomTex;
+
     public override void OnInspectorGUI() {
         float max = EditorGUIUtility.currentViewWidth;
         float currentX = 0;
@@ -22,5 +26,17 @@ public class PropTagEditor : Editor {
 
         base.OnInspectorGUI();
 
+        if (GUILayout.Button("Get a random one!")) {
+            m_animT = 0;
+            m_randomTex = AssetPreview.GetAssetPreview(edited.GetRandomProp().gameObject);
+        }
+        if (m_randomTex != null)
+            GUI.DrawTexture(new Rect((EditorGUIUtility.currentViewWidth - 100) / 2, m_animT, 100, 100), m_randomTex);
+
+        m_animT += 10;
+    }
+
+    public override bool RequiresConstantRepaint() {
+        return m_animT < 1000;
     }
 }

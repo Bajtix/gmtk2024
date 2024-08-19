@@ -10,10 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ae4bddc18dd4eb168b9939d3f822d743, type: 3}
-  m_Name: Outdoor
+  m_Name: Fruit
   m_EditorClassIdentifier: 
   objects:
-  - prop: {fileID: 5315101696939080803, guid: 53e265e637b2395e4864134bcaf8fdab, type: 3}
-    width: 2.38
-  - prop: {fileID: 5879904994788455879, guid: b2db627ee92f9974ca60cf0a38c8e09c, type: 3}
-    width: 2.77
+  - prop: {fileID: 2494971324705400217, guid: 3b7016f3314d570ccac3c225fe62a4bf, type: 3}
+    width: 0.001

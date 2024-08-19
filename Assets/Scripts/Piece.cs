@@ -7,7 +7,7 @@ public class Piece : MonoBehaviour {
     [SerializeField] private MeshRenderer m_renderer;
     [SerializeField] private Collider m_collider;
     private readonly int m_pieceLayer = 6, m_previewLayer = 7;
-    public float scoreWeight;
+    public float scoreWeight = 1;
     [ReadOnly][SerializeField] private BuildPlate m_buildPlate;
 
     public virtual void BeginHighlight() {

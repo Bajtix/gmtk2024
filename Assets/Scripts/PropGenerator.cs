@@ -4,8 +4,8 @@ using System.Linq;
 
 public class PropGenerator : MonoBehaviour {
     [Required][SerializeField] private Prop m_owner;
-    [SerializeField][Expandable] private PropTag m_objects;
-    [SerializeField] private float m_chance = 1;
+    [SerializeField][Expandable][Required] private PropTag m_objects;
+    [SerializeField][Range(0, 1)] private float m_chance = 1;
     [SerializeField] private int m_maxAttempts = 10;
     [SerializeField] private bool m_lockGroup;
     [ShowIf(nameof(m_lockGroup))][SerializeField] private int m_generatorGroup;

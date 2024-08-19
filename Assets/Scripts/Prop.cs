@@ -78,7 +78,7 @@ public class Prop : MonoBehaviour {
     private bool ValidateTags() => tags == null ||
         tags.Where(
             tag => tag != null &&
-            tag.objects.Where(o => o.prop == this).Count() == 0
+            !tag.Contains(this)
         ).Count() <= 0 ||
         !CanEditTags;
 
@@ -104,6 +104,15 @@ public class Prop : MonoBehaviour {
     private void AutoFindChildGenerators() {
         m_generators.Clear();
         m_generators.AddRange(transform.GetComponentsInChildren<PropGenerator>());
+    }
+
+    [Button]
+    private void AutoFixTags() {
+        foreach (var tag in tags) {
+            if (tag != null && !tag.Contains(this)) {
+                tag.objects.Add(new PropTag.PropProbability(this));
+            }
+        }
     }
     #endregion
 
