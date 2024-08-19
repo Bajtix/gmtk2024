@@ -21,7 +21,7 @@ public class Builder : PlayerState {
             if (m_highlightedPiece != null) m_highlightedPiece.Highlight();
         } else {
 
-            m_previewedPiece.Preview(m_buildPlate, hit.point, hit.normal, m_rotation);
+            m_previewedPiece.Preview(hit.collider.GetComponent<Piece>(), hit.point, hit.normal, m_rotation);
 
             //redundant.
             if (m_highlightedPiece != null) {
@@ -36,20 +36,22 @@ public class Builder : PlayerState {
         if (m_previewedPiece == null) {
             if (Input.GetButtonDown("Fire2")) {
                 if (m_highlightedPiece == null) return;
-                m_highlightedPiece.EndHighlight();
-                m_previewedPiece = m_highlightedPiece;
-                m_highlightedPiece = null;
-                m_previewedPiece.Pick();
-                m_previewedPiece.BeginPreview();
+                if (m_highlightedPiece.Pick()) {
+                    m_highlightedPiece.EndHighlight();
+                    m_highlightedPiece.BeginPreview();
+                    m_previewedPiece = m_highlightedPiece;
+                    m_highlightedPiece = null;
+                }
             }
         } else {
             m_rotation += Input.GetAxis("Mouse ScrollWheel") * Time.deltaTime * 4000;
             if (Input.GetButtonDown("Fire1")) {
                 var ray = m_camera.ScreenPointToRay(Input.mousePosition);
                 if (!Physics.Raycast(ray, out var hit, 100, m_mask)) return;
-                m_previewedPiece.EndPreview();
-                m_previewedPiece.Place(m_buildPlate, hit.point, hit.normal, m_rotation);
-                m_previewedPiece = null;
+                if (m_previewedPiece.Place(hit.collider.GetComponent<Piece>(), hit.point, hit.normal, m_rotation)) {
+                    m_previewedPiece.EndPreview();
+                    m_previewedPiece = null;
+                }
             }
             if (Input.GetButtonDown("Fire2")) {
                 m_previewedPiece.EndPreview();

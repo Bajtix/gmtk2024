@@ -1,20 +1,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BuildPlate : MonoBehaviour {
-    [SerializeField] private List<Piece> m_pieces;
+public class BuildPlate : Piece {
 
-    public Material pieceMaterial;
+    public override void BeginHighlight() {
 
-    public void AddPiece(Piece p) {
-        m_pieces.Add(p);
-        p.transform.SetParent(transform);
     }
 
-    public void RemovePiece(Piece p) {
-        m_pieces.Remove(p);
-        p.transform.SetParent(null);
+    public override void Highlight() {
+
     }
 
+    public override void EndHighlight() {
 
+    }
+
+    public override void ComputePosition(Piece parent, Vector3 point, Vector3 up, float rotation) {
+
+    }
+
+    public override bool Pick() {
+        return false;
+    }
+
+    public override void Drop() {
+
+    }
 }
