@@ -8,10 +8,11 @@ public class Prop : MonoBehaviour {
 
     [ValidateInput(nameof(ValidateTags), "Not all tags include this object!")][EnableIf(nameof(CanEditTags))] public PropTag[] tags;
     [Required] public new Collider collider;
+    [Required] public Piece linkedPiece;
     [SerializeField] private List<PropGenerator> m_generators = new();
     private List<int> m_generatorGroupLocks = new();
 
-    [Space(20)][SerializeField][ReadOnly] private List<Prop> m_children = new();
+    [Space(30)][SerializeField][ReadOnly] private List<Prop> m_children = new();
     [SerializeField][ReadOnly] private Prop m_parent = null;
     [ShowNativeProperty] public Prop Root => m_parent == null ? this : m_parent.Root;
     [ShowNativeProperty] public int DescendantCount => GetAllDescendants().Count();
