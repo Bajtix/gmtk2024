@@ -9,6 +9,7 @@ public class Prop : MonoBehaviour {
     [ValidateInput(nameof(ValidateTags), "Not all tags include this object!")][EnableIf(nameof(CanEditTags))] public PropTag[] tags;
     [Required] public new Collider collider;
     [SerializeField] private List<PropGenerator> m_generators = new();
+    private List<int> m_generatorGroupLocks = new();
 
     [Space(20)][SerializeField][ReadOnly] private List<Prop> m_children = new();
     [SerializeField][ReadOnly] private Prop m_parent = null;
@@ -21,9 +22,11 @@ public class Prop : MonoBehaviour {
     }
 
     public Prop Initialize(Prop daddy, bool vasectomised = false) {
+        if (m_parent != null || m_children.Count > 0) throw new System.Exception("Cannot initialize twice!");
         m_parent = daddy;
         if (vasectomised) return this;
-        foreach (var w in m_generators) {
+        var gens = m_generators.Shuffle();
+        foreach (var w in gens) {
             var child = w.Generate();
             if (child == null) continue;
             m_children.Add(child);
@@ -33,6 +36,7 @@ public class Prop : MonoBehaviour {
     }
 
     public void DestroyAllChildren(bool immediate = false) {
+        m_generatorGroupLocks.Clear();
         foreach (var w in m_children) {
             try {
                 w.DestroyAllChildren(immediate);
@@ -57,6 +61,14 @@ public class Prop : MonoBehaviour {
     public int GetDescendanceLevel(int n = 0) {
         if (m_parent != null) return m_parent.GetDescendanceLevel(n + 1);
         return n + 1;
+    }
+
+    public void LockGeneratorGroup(int id) {
+        m_generatorGroupLocks.Add(id);
+    }
+
+    public bool IsGeneratorGroupLocked(int id) {
+        return m_generatorGroupLocks.Contains(id);
     }
 
 
