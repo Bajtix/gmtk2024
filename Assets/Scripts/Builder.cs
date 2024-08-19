@@ -1,9 +1,10 @@
+using NaughtyAttributes;
 using UnityEngine;
 
 public class Builder : PlayerState {
-    [SerializeField] private Piece m_previewedPiece;
-    [SerializeField] private Piece m_highlightedPiece;
-    [SerializeField] private float m_rotation;
+    [SerializeField][ReadOnly] private Piece m_previewedPiece;
+    [SerializeField][ReadOnly] private Piece m_highlightedPiece;
+    [SerializeField][ReadOnly] private float m_rotation;
     [SerializeField] private BuildPlate m_buildPlate;
     [SerializeField] private LayerMask m_mask;
 
@@ -37,6 +38,7 @@ public class Builder : PlayerState {
             if (Input.GetButtonDown("Fire2")) {
                 if (m_highlightedPiece == null) return;
                 if (m_highlightedPiece.Pick()) {
+                    m_rotation = m_highlightedPiece.GetRememberedRotation();
                     m_highlightedPiece.EndHighlight();
                     m_highlightedPiece.BeginPreview();
                     m_previewedPiece = m_highlightedPiece;

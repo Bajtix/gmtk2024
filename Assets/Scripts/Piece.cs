@@ -10,11 +10,16 @@ public class Piece : MonoBehaviour {
     [Required] public new Collider collider;
     private readonly int m_pieceLayer = 6, m_previewLayer = 7;
     public float scoreWeight = 1;
+    private float m_rememberedRotation;
 
     [Space(30)][SerializeField][ReadOnly] private List<Piece> m_children = new();
     [SerializeField][ReadOnly] private Piece m_parent = null;
     [ShowNativeProperty] public Piece Root => m_parent == null ? this : m_parent.Root;
     [ShowNativeProperty] public int DescendantCount => GetAllDescendants().Count();
+
+    private void Awake() {
+        gameObject.layer = m_pieceLayer;
+    }
 
     public Piece[] GetAllDescendants() {
         try {
@@ -78,9 +83,13 @@ public class Piece : MonoBehaviour {
     }
 
     public bool IsClearToBuild(Piece parent) {
-        foreach (var p in Root.GetAllDescendants()) {
+        if (parent.Root is not BuildPlate) return false;
+        foreach (var p in parent.Root.GetAllDescendants().Append(parent.Root)) {
             if (Physics.ComputePenetration(collider, transform.position, transform.rotation, p.collider, p.transform.position, p.transform.rotation, out _, out float dst)) {
-                if (dst > 0.001f) return false;
+                if (dst > 0.001f) {
+                    Debug.Log(p.gameObject.name + "is preventing placement");
+                    return false;
+                }
             }
         }
 
@@ -99,6 +108,7 @@ public class Piece : MonoBehaviour {
 
     public virtual void EndPreview() {
         gameObject.layer = m_pieceLayer;
+        collider.enabled = true;
     }
 
 
@@ -111,10 +121,12 @@ public class Piece : MonoBehaviour {
 
         m_rigidbody.isKinematic = true;
         parent.Attach(this);
-
+        m_rememberedRotation = rotation;
 
         return true;
     }
+
+    public float GetRememberedRotation() => m_rememberedRotation;
 
 
     public virtual bool Pick() {
