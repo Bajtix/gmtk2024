@@ -12,6 +12,7 @@ public class ViewerState : PlayerState {
 
     private void Start() {
         m_possibleAngles = m_cameraViews.GetComponentsInChildren<Transform>().Where(m => m != m_cameraViews).ToArray();
+        SetCamera(0);
     }
 
     public override void StateEnter(Camera camera) {
