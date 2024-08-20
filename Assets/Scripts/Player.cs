@@ -11,7 +11,7 @@ public class Player : MonoBehaviour {
     private Transform m_stateCameraTransform;
     private float m_stateCameraFov;
 
-    private void SetState(int id, bool force = false) {
+    public void SetState(int id, bool force = false) {
         if (id == m_state && !force) return;
         CurrentState.StateLeave();
         m_state = id;
