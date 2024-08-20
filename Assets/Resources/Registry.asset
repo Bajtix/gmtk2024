@@ -25,3 +25,57 @@ MonoBehaviour:
   - name: Apple Stack
     prop: {fileID: 2494971324705400217, guid: 3b7016f3314d570ccac3c225fe62a4bf, type: 3}
     piece: {fileID: 8495444905621316357, guid: cd3f62d77e23a3ef9abd129f5f42a245, type: 3}
+  - name: Axe
+    prop: {fileID: -1040076918754523051, guid: 503de70f15879424a9b8a3732f51211d, type: 3}
+    piece: {fileID: 6785291091488396942, guid: ff2fc8d0f8be42f488ba1fcfcb056069, type: 3}
+  - name: Sword
+    prop: {fileID: 2336103779390351533, guid: 6ee309d49cb1b1e47b196b2253a15a60, type: 3}
+    piece: {fileID: -1132277509039354349, guid: 3f340045e188d694baa078c71f4e9c0e,
+      type: 3}
+  - name: Halberd
+    prop: {fileID: 7741193907703279835, guid: 91b1e960350b3844cb69a3cec13ea361, type: 3}
+    piece: {fileID: 4282190424863930833, guid: 01bc4ce1bc8dfd8408595f82d43dcb9f, type: 3}
+  - name: Spear
+    prop: {fileID: 804433870864940230, guid: 6aec143396872d64088dfc2256bf6496, type: 3}
+    piece: {fileID: 6141047256887038223, guid: 6002fe2f688f37f4693aa9d5a6cf4021, type: 3}
+  - name: Table
+    prop: {fileID: 6004647540594684836, guid: c43c82453690852418d3c279014d2223, type: 3}
+    piece: {fileID: 3695460283258923819, guid: 8fb5ea5116be69b4fb4013076a1acfbd, type: 3}
+  - name: Pillory
+    prop: {fileID: 3061557438384109143, guid: 859d9c1a8b8e8d544bd92a6854737491, type: 3}
+    piece: {fileID: 5584778352486335940, guid: 475785f709641b048a4e6695963e9be4, type: 3}
+  - name: Barricade
+    prop: {fileID: 2007637929574844076, guid: 9761339d5d4f97947ac371a31f131a0e, type: 3}
+    piece: {fileID: -8065599137318734543, guid: 9422b04390485124abf8e69aa844ff87,
+      type: 3}
+  - name: Stone Pillar
+    prop: {fileID: 661196282469905422, guid: 086890429b4bc8a4aad8ced2f3d0a6bc, type: 3}
+    piece: {fileID: 7043684473531446611, guid: 1a00f9783421afe4c910385362ee8583, type: 3}
+  - name: Log
+    prop: {fileID: 5020690840087002436, guid: ce2a6f7e91453cb43befd790a45be967, type: 3}
+    piece: {fileID: -1520563903057347237, guid: e76a7e0a982009043b13acb5745eb5fe,
+      type: 3}
+  - name: Torch
+    prop: {fileID: 6129806834794406480, guid: 700aa6a0b9892e24d8c3765c54784aaf, type: 3}
+    piece: {fileID: -8754260808724573165, guid: 449f78598f6502e4e897b6d9dc78ba05,
+      type: 3}
+  - name: Standing Torch
+    prop: {fileID: 6618631193787435741, guid: b819a82e7c139f242a27488e0a754889, type: 3}
+    piece: {fileID: 458350715986664678, guid: 56a2c56e7c2a0c24fbc952ee06212294, type: 3}
+  - name: Skull
+    prop: {fileID: 5789497650301021607, guid: e18a8c1e1f431854f9822acaeef4e3f1, type: 3}
+    piece: {fileID: -2459063180030643715, guid: 96b0f233ae081744088685d0a00c07cf,
+      type: 3}
+  - name: Wall
+    prop: {fileID: 2048230602088843244, guid: d65d6bf4d715f63489e44930a56dae5c, type: 3}
+    piece: {fileID: 3008173181616304543, guid: c7b60d60f21a1f6439d3d13aac6aa35b, type: 3}
+  - name: Broken Wall
+    prop: {fileID: 4604747359615164982, guid: 8053c452eacf9514993d741a491d2951, type: 3}
+    piece: {fileID: 8648094012623153900, guid: 8fe0a6aa600a96648a086dc5876b6d58, type: 3}
+  - name: Campfire
+    prop: {fileID: 5557612705030057957, guid: 6610e5b7a2b834e4fa871bdcbbf4570d, type: 3}
+    piece: {fileID: 1393274241659513761, guid: 053543fee25964c4fa59741793b2ca58, type: 3}
+  - name: Fruit Basket
+    prop: {fileID: 5297614531873393077, guid: 6aa4876f57eddae49ba348745edb9d1a, type: 3}
+    piece: {fileID: -6351821332002868600, guid: df420b388da58034c9dd88f921e8fa88,
+      type: 3}
