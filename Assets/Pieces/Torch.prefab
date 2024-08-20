@@ -112,11 +112,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b02480f323be8c2cfbdab7234fbc7087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectId: 
+  objectId: Torch
   rigidbody: {fileID: -6509626219817817944}
   collider: {fileID: 1555449847114718099}
   renderer: {fileID: -4677089330151445777}
   scoreWeight: 1
+  symmetric: 0
   maxDescendance: 4
   m_children: []
   m_parent: {fileID: 0}

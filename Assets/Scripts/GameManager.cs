@@ -4,13 +4,16 @@ using System.Linq;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class GameManager : MonoBehaviour {
     [SerializeField] private BuilderState m_buildState;
     [SerializeField] private CollectionState m_collectionState;
     [SerializeField] private BuildPlate m_buildPlate;
     [SerializeField] private Prop m_viewerPlate;
-    [SerializeField] private TextMeshProUGUI m_scoreDisplay;
+    [SerializeField] private TMP_Text m_scoreDisplay;
+    
 
     public void BeginRound() {
         m_buildState.ClearPlate();
@@ -29,6 +32,7 @@ public class GameManager : MonoBehaviour {
         FindObjectOfType<Player>().SetState(1);
         FindObjectOfType<Player>().enabled = false;
         StartCoroutine(nameof(DoScoring));
+        
     }
 
 
@@ -39,7 +43,7 @@ public class GameManager : MonoBehaviour {
         float score = 0;
 
         void Score(float s) {
-            m_scoreDisplay.text = $"{score:0.00}";
+           score += s;
         }
 
         Vector3 GetPositionRelative(Transform to, Vector3 pos) {
@@ -77,10 +81,10 @@ public class GameManager : MonoBehaviour {
                 smallestPiece.renderer.SetHighlighted();
                 smallestProp.transform.localScale = Vector3.one * 0.5f;
                 Debug.Log($"Found smallest dst between {smallestPiece.gameObject.name} and {smallestProp.gameObject.name} to be {smallestDst}");
-                Score(Mathf.Clamp(10 - smallestDst, 0, 10));
-                yield return new WaitForSeconds(0.2f);
+                Score(Mathf.Clamp(100 - smallestDst, 0, 10));
+            
             }
-
+            
             // pokaż przycisk back
         }
 
@@ -95,7 +99,10 @@ public class GameManager : MonoBehaviour {
         //     pieces.Remove(closestOne);
         //     Debug.Log(closestOne.gameObject.name);
         // }
+        Debug.Log("kutras");
+        m_scoreDisplay.SetText($"{score}") ;   
     }
+
 
     private void Start() {
         BeginRound();
