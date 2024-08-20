@@ -7,6 +7,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Cables
+    second: {fileID: 2100000, guid: f6710b7d1c5fe093995fb4c4f5423fa0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Concrete035
     second: {fileID: 2100000, guid: cf248489ef2bb4e39af9d277ac574572, type: 2}
   - first:
@@ -22,8 +27,38 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Fabric019
+    second: {fileID: 2100000, guid: 81b71fa1361a089ffbefabe5cc5e4022, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fabric067
+    second: {fileID: 2100000, guid: 2e8552d2e8e6ca602bdf54e921c62eb9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass
+    second: {fileID: 2100000, guid: eaa062511e9b5bdf4899b41e3724649a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lamp Glow
+    second: {fileID: 2100000, guid: 5100d9e0976f3637ba45426f0237f9db, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal055A
+    second: {fileID: 2100000, guid: 980150cc81d9582e28342c79ff8fc412, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: PaintedWood008
     second: {fileID: 2100000, guid: 7feb8b5b37d1d6530ae466a777def3a8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pillow
+    second: {fileID: 2100000, guid: fc15fb650b4b9ec3cabb7dc702a4642b, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
