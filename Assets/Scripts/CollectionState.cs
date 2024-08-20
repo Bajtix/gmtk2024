@@ -9,9 +9,17 @@ public class CollectionState : PlayerState {
     [SerializeField] private float m_dragStrength = 10;
     [SerializeField] private LayerMask m_mask;
     [SerializeField][Required] private BuilderState m_builderState;
+    [SerializeField][Required] private Transform m_drawer, m_drawerClosedPoint, m_drawerOpenPoint;
 
     private List<LibraryPiece> m_allPieces = new();
 
+    private void Start() {
+        m_drawer.position = m_drawerClosedPoint.position;
+    }
+
+    private void Update() {
+        m_drawer.position = Vector3.Lerp(m_drawer.position, m_active ? m_drawerOpenPoint.position : m_drawerClosedPoint.position, Time.deltaTime * 2f);
+    }
 
     public LibraryPiece SpawnPiece(Piece p) {
         p = p.Original;
@@ -19,6 +27,7 @@ public class CollectionState : PlayerState {
         go.transform.position = SceneConstants.Instance.CollectionSpawner.position;
         var lp = go.AddComponent<LibraryPiece>();
         var pp = go.GetComponent<Piece>();
+        go.transform.SetParent(SceneConstants.Instance.CollectionSpawner);
         lp.renderer = pp.renderer;
         lp.rigidbody = pp.rigidbody;
         lp.objectId = pp.objectId;

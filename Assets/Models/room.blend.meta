@@ -3,7 +3,47 @@ guid: 88dfb41f576a0fccdab2295caeb5e6a1
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Concrete035
+    second: {fileID: 2100000, guid: cf248489ef2bb4e39af9d277ac574572, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Concrete044C
+    second: {fileID: 2100000, guid: 8f1993daaf2ee3494a03a76bf6177f62, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cork002
+    second: {fileID: 2100000, guid: 4868fc13bcb30d4039a0b679ad8ceb18, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PaintedWood008
+    second: {fileID: 2100000, guid: 7feb8b5b37d1d6530ae466a777def3a8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tv Chassis
+    second: {fileID: 2100000, guid: d3dcda0592d3f3b8fa094d9c3a99557c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tv Chassis 2
+    second: {fileID: 2100000, guid: c150afe357dc26b81806910e487172ab, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tv Screen
+    second: {fileID: 2100000, guid: aa1af604b5f4fba1a9020aa5d50ac744, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wood066
+    second: {fileID: 2100000, guid: 538696bf09ba5d6e6a5bcc2c9ab1f611, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

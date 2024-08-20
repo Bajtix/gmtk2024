@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objects:
   - prop: {fileID: 1536221684171798569, guid: 28eecaa572831f74e851d75d618796d2, type: 3}
-    width: 0.001
+    width: 0.09
   - prop: {fileID: 8161429601307758964, guid: f2fbefb39ddf07e48a69ba232af2c050, type: 3}
     width: 0.001
   - prop: {fileID: 6532114872084261252, guid: debaea23bb0082643bcddfdf816c1e42, type: 3}

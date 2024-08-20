@@ -16,3 +16,12 @@ MonoBehaviour:
   - name: Stall A
     prop: {fileID: 5315101696939080803, guid: 53e265e637b2395e4864134bcaf8fdab, type: 3}
     piece: {fileID: 2769078833745418474, guid: 016017567226040e3be086787e5b3296, type: 3}
+  - name: Stall B
+    prop: {fileID: 5879904994788455879, guid: b2db627ee92f9974ca60cf0a38c8e09c, type: 3}
+    piece: {fileID: 1642120784655478204, guid: 7ac1c4f0513896afea16c57af8c67b47, type: 3}
+  - name: Banana
+    prop: {fileID: 7335881355405560933, guid: e95507bb6fbe8d743862297067cf6748, type: 3}
+    piece: {fileID: 8938302962479977845, guid: e53ac59685e5b7eda87989e835a1c760, type: 3}
+  - name: Apple Stack
+    prop: {fileID: 2494971324705400217, guid: 3b7016f3314d570ccac3c225fe62a4bf, type: 3}
+    piece: {fileID: 8495444905621316357, guid: cd3f62d77e23a3ef9abd129f5f42a245, type: 3}
