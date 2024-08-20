@@ -8,7 +8,7 @@ public class Collection : PlayerState {
     [SerializeField][ReadOnly] private LibraryPiece m_highlightedPiece;
     [SerializeField] private float m_dragStrength = 10;
     [SerializeField] private LayerMask m_mask;
-    [SerializeField] private Builder m_builderState;
+    [SerializeField][Required] private Builder m_builderState;
     [SerializeField] private Transform m_pieceSpawnPoint;
 
     [SerializeField] private Prop[] m_debugStartPieces;
@@ -22,6 +22,7 @@ public class Collection : PlayerState {
     }
 
     public LibraryPiece SpawnPiece(Piece p) {
+        p = p.Original;
         var go = Instantiate(p.gameObject);
         go.transform.position = m_pieceSpawnPoint.position;
         var lp = go.AddComponent<LibraryPiece>();
@@ -61,7 +62,7 @@ public class Collection : PlayerState {
 
         if (m_draggedPiece == null) {
             if (Input.GetButtonDown("Fire2")) {
-                if (m_highlightedPiece == null) return;
+                if (m_highlightedPiece == null || m_highlightedPiece.IsAnimating) return;
                 m_highlightedPiece.EndHighlight();
                 m_highlightedPiece.BeginDrag();
                 m_draggedPiece = m_highlightedPiece;
@@ -70,7 +71,7 @@ public class Collection : PlayerState {
             }
 
             if (Input.GetButtonDown("Fire1")) {
-                if (m_highlightedPiece == null) return;
+                if (m_highlightedPiece == null || m_highlightedPiece.IsAnimating) return;
                 m_highlightedPiece.EndHighlight();
                 m_highlightedPiece.SendUp();
                 m_builderState.SpawnPiece(m_highlightedPiece.GetPiece());

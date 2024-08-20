@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using NaughtyAttributes;
 using UnityEngine;
+using System.Linq;
 
 public class Builder : PlayerState {
     [SerializeField][ReadOnly] private Piece m_previewedPiece;
@@ -8,8 +9,9 @@ public class Builder : PlayerState {
     [SerializeField][ReadOnly] private float m_rotation;
     [SerializeField] private BuildPlate m_buildPlate;
     [SerializeField] private LayerMask m_mask;
+    [SerializeField][Required] private Collection m_collectionState;
 
-    private List<Piece> m_allPieces;
+    private List<Piece> m_allPieces = new List<Piece>();
 
     public override void StateFixedUpdate() {
         var ray = m_camera.ScreenPointToRay(Input.mousePosition);
@@ -69,14 +71,28 @@ public class Builder : PlayerState {
     }
 
     public void SpawnPiece(Piece p) {
-        Instantiate(p.gameObject);
+        var piece = Instantiate(p.Original.gameObject).GetComponent<Piece>();
+        m_allPieces.Add(piece);
+    }
+
+    public void ReturnPiece(Piece p) {
+        m_allPieces.Remove(p);
+        var piece = p.Original;
+        m_collectionState.SpawnPiece(piece).SendDown(p.transform.position, p.transform.rotation);
+        Destroy(p.gameObject);
     }
 
     public override void StateLeave() {
         base.StateLeave();
+        var arr = m_allPieces.Where(w => w.Root is not BuildPlate).ToArray();
+        for (int i = 0; i < arr.Length; i++) {
+            ReturnPiece(arr[i]);
+        }
+
         if (m_previewedPiece == null) return;
         m_previewedPiece.EndPreview();
         m_previewedPiece.Drop();
         m_previewedPiece = null;
+
     }
 }

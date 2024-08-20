@@ -17,6 +17,8 @@ public class Prop : MonoBehaviour {
     [ShowNativeProperty] public Prop Root => m_parent == null ? this : m_parent.Root;
     [ShowNativeProperty] public int DescendantCount => GetAllDescendants().Count();
 
+    public Prop Original => ObjectRegistry.GetProp(objectId);
+
     private void Awake() {
         if (transform.localScale != Vector3.one)
             Debug.LogWarning("Props with non-standard scaling will cause issues for collision detection");

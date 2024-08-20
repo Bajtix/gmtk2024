@@ -20,6 +20,8 @@ public class Piece : MonoBehaviour {
     [ShowNativeProperty] public Piece Root => m_parent == null ? this : m_parent.Root;
     [ShowNativeProperty] public int DescendantCount => GetAllDescendants().Count();
 
+    public Piece Original => ObjectRegistry.GetPiece(objectId);
+
     private void Awake() {
         gameObject.layer = m_pieceLayer;
 
