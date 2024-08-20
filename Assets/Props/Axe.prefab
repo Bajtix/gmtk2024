@@ -46,10 +46,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d3f8ad23f9e15b8192bbdd0fab3f8a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectId: Axe
   tags:
   - {fileID: 11400000, guid: ed3c94f8ec6dfd64ba76d0f65ccd1bee, type: 2}
   collider: {fileID: 9221117901324521600}
-  linkedPiece: {fileID: 0}
   m_generators: []
   m_children: []
   m_parent: {fileID: 0}

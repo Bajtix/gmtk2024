@@ -22,9 +22,11 @@ public class CollectionState : PlayerState {
     }
 
     public LibraryPiece SpawnPiece(Piece p) {
+        if (p == null) throw new System.NullReferenceException("Spawning null piece is not allowed");
+        if (p.Original == null) throw new System.Exception("Could not find original of " + p.ToString());
         p = p.Original;
         var go = Instantiate(p.gameObject);
-        go.transform.position = SceneConstants.Instance.CollectionSpawner.position;
+        go.transform.position = SceneConstants.Instance.CollectionSpawner.position + new Vector3(Random.Range(-2, 2f), 0, Random.Range(-2, 2f));
         var lp = go.AddComponent<LibraryPiece>();
         var pp = go.GetComponent<Piece>();
         go.transform.SetParent(SceneConstants.Instance.CollectionSpawner);

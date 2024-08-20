@@ -110,7 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b02480f323be8c2cfbdab7234fbc7087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectId: 
+  objectId: Broken Wall
   rigidbody: {fileID: -320225641324051553}
   collider: {fileID: 1913171520244108609}
   renderer: {fileID: 470962774019220045}

@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b02480f323be8c2cfbdab7234fbc7087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectId: 
+  objectId: Log
   rigidbody: {fileID: -8167454137389397999}
   collider: {fileID: 8730876795876762299}
   renderer: {fileID: 5901530812065136064}

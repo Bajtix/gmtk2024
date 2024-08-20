@@ -99,10 +99,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d3f8ad23f9e15b8192bbdd0fab3f8a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectId: Fruit Basket
   tags:
   - {fileID: 11400000, guid: 3a5478fe7204fc443bd7a6bbb2675e16, type: 2}
   collider: {fileID: 1559751376540304056}
-  linkedPiece: {fileID: 0}
   m_generators:
   - {fileID: 1151738412516553492}
   - {fileID: 4952977054300412588}

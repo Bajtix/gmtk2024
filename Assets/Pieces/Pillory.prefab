@@ -110,7 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b02480f323be8c2cfbdab7234fbc7087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectId: 
+  objectId: Pillory
   rigidbody: {fileID: 1019999083724843772}
   collider: {fileID: 697933095263212012}
   renderer: {fileID: -1727220100617872113}

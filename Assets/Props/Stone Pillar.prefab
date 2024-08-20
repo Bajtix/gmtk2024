@@ -46,10 +46,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d3f8ad23f9e15b8192bbdd0fab3f8a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectId: Stone Pillar
   tags:
   - {fileID: 0}
   collider: {fileID: 8278960447067385881}
-  linkedPiece: {fileID: 0}
   m_generators: []
   m_children: []
   m_parent: {fileID: 0}

@@ -110,7 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b02480f323be8c2cfbdab7234fbc7087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectId: 
+  objectId: Skull
   rigidbody: {fileID: -21091964004008428}
   collider: {fileID: 7121156721709638459}
   renderer: {fileID: 9170824723391372857}

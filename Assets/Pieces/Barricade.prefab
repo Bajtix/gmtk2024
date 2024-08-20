@@ -110,7 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b02480f323be8c2cfbdab7234fbc7087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectId: 
+  objectId: Barricade
   rigidbody: {fileID: 8081423765285123032}
   collider: {fileID: 4637930604625947346}
   renderer: {fileID: -6459637596577198891}
