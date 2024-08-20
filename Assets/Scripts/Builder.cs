@@ -83,6 +83,14 @@ public class Builder : PlayerState {
         Destroy(p.gameObject);
     }
 
+    public void ClearPlate() {
+        m_buildPlate.DestroyAllChildren();
+        var arr = m_allPieces.Where(w => w.Root is not BuildPlate).ToArray();
+        for (int i = 0; i < arr.Length; i++) {
+            ReturnPiece(arr[i]);
+        }
+    }
+
     public override void StateLeave() {
         base.StateLeave();
         var arr = m_allPieces.Where(w => w.Root is not BuildPlate).ToArray();

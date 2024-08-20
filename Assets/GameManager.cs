@@ -1,0 +1,21 @@
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
+
+public class GameManager : MonoBehaviour {
+    [SerializeField] private Builder m_buildState;
+    [SerializeField] private Collection m_collectionState;
+
+    public void BeginRound() {
+        m_buildState.ClearPlate();
+        m_collectionState.DestroyAllPieces();
+        SceneConstants.Instance.RootViewPlate.Generate();
+        var pieces = SceneConstants.Instance.RootViewPlate.GetAllDescendants().Where(a => !string.IsNullOrWhiteSpace(a.objectId)).Select(a => ObjectRegistry.GetPiece(a.objectId));
+        foreach (var piece in pieces) m_collectionState.SpawnPiece(piece);
+    }
+
+    private void Start() {
+        BeginRound();
+    }
+}

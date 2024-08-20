@@ -10,6 +10,8 @@ public class Collection : PlayerState {
     [SerializeField] private LayerMask m_mask;
     [SerializeField][Required] private Builder m_builderState;
 
+    private List<LibraryPiece> m_allPieces = new();
+
 
     [SerializeField] private Prop[] m_debugStartPieces;
 
@@ -31,7 +33,15 @@ public class Collection : PlayerState {
         lp.rigidbody = pp.rigidbody;
         lp.objectId = pp.objectId;
         Destroy(pp);
+        m_allPieces.Add(lp);
         return lp;
+    }
+
+    public void DestroyAllPieces() {
+        for (int i = 0; i < m_allPieces.Count; i++) {
+            Destroy(m_allPieces[0].gameObject);
+        }
+        m_allPieces.Clear();
     }
 
     public override void StateFixedUpdate() {
