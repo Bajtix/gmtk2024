@@ -11,11 +11,13 @@ public class Collection : PlayerState {
     [SerializeField] private Builder m_builderState;
     [SerializeField] private Transform m_pieceSpawnPoint;
 
-    [SerializeField] private Piece[] m_debugStartPieces;
+    [SerializeField] private Prop[] m_debugStartPieces;
 
     private void Start() {
         foreach (var m in m_debugStartPieces) {
-            SpawnPiece(m);
+            var piece = ObjectRegistry.GetPiece(m.objectId);
+            Debug.Log("Resolved id " + m.objectId + " to " + piece);
+            SpawnPiece(piece);
         }
     }
 
@@ -26,7 +28,7 @@ public class Collection : PlayerState {
         var pp = go.GetComponent<Piece>();
         lp.renderer = pp.renderer;
         lp.rigidbody = pp.rigidbody;
-        lp.linkedPiece = p;
+        lp.objectId = pp.objectId;
         Destroy(pp);
         return lp;
     }
@@ -71,7 +73,7 @@ public class Collection : PlayerState {
                 if (m_highlightedPiece == null) return;
                 m_highlightedPiece.EndHighlight();
                 m_highlightedPiece.SendUp();
-                m_builderState.SpawnPiece(m_highlightedPiece.linkedPiece);
+                m_builderState.SpawnPiece(m_highlightedPiece.GetPiece());
             }
         } else {
             if (Input.GetButtonDown("Fire2") || Input.GetButtonDown("Fire1")) {

@@ -1,10 +1,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using NaughtyAttributes;
+using Unity.VisualScripting;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody), typeof(PieceRenderer))]
 public class Piece : MonoBehaviour {
+    [ValidateInput(nameof(ValidateId), "Object id does not match the registry")][EnableIf(nameof(IsPrefab))] public string objectId;
     [Required] public new Rigidbody rigidbody;
     [Required] public new Collider collider;
     [Required] public new PieceRenderer renderer;
@@ -184,6 +186,18 @@ public class Piece : MonoBehaviour {
         if (collider == null) collider = GetComponent<Collider>();
         if (renderer == null) renderer = GetComponent<PieceRenderer>();
     }
+
+    private bool IsPrefab =>
+#if UNITY_EDITOR
+    gameObject.IsPrefabDefinition();
+#else
+    false;
+#endif
+
+    private bool ValidateId() {
+        return ObjectRegistry.GetPiece(objectId) == this || !IsPrefab;
+    }
+
     #endregion
 
 

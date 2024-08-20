@@ -6,9 +6,9 @@ using UnityEngine;
 
 public class Prop : MonoBehaviour {
 
-    [ValidateInput(nameof(ValidateTags), "Not all tags include this object!")][EnableIf(nameof(CanEditTags))] public PropTag[] tags;
+    [ValidateInput(nameof(ValidateId), "Object id does not match the registry")][EnableIf(nameof(IsPrefab))] public string objectId;
+    [ValidateInput(nameof(ValidateTags), "Not all tags include this object!")][EnableIf(nameof(IsPrefab))] public PropTag[] tags;
     [Required] public new Collider collider;
-    [Required] public Piece linkedPiece;
     [SerializeField] private List<PropGenerator> m_generators = new();
     private List<int> m_generatorGroupLocks = new();
 
@@ -80,9 +80,15 @@ public class Prop : MonoBehaviour {
             tag => tag != null &&
             !tag.Contains(this)
         ).Count() <= 0 ||
-        !CanEditTags;
+        !IsPrefab;
 
-    private bool CanEditTags => gameObject.IsPrefabDefinition();
+    private bool IsPrefab =>
+#if UNITY_EDITOR
+    gameObject.IsPrefabDefinition();
+#else
+    false;
+#endif
+
 
     [Button]
     public void Generate() {
@@ -113,6 +119,10 @@ public class Prop : MonoBehaviour {
                 tag.objects.Add(new PropTag.PropProbability(this));
             }
         }
+    }
+
+    private bool ValidateId() {
+        return ObjectRegistry.GetProp(objectId) == this || !IsPrefab;
     }
     #endregion
 

@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using NaughtyAttributes;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
 public class LibraryPiece : MonoBehaviour {
-    public new Rigidbody rigidbody;
-    public new PieceRenderer renderer;
-    public Piece linkedPiece;
+    public string objectId;
+    [Required] public new Rigidbody rigidbody;
+    [Required] public new PieceRenderer renderer;
     private readonly int m_libaryPieceLayer = 8, m_previewLayer = 7;
 
     private void Start() {
@@ -46,6 +47,11 @@ public class LibraryPiece : MonoBehaviour {
     public void SendDown() {
         gameObject.SetActive(true);
     }
+
+    public Piece GetPiece() {
+        return ObjectRegistry.GetPiece(objectId);
+    }
+
 
 
 }

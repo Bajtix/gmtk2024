@@ -155,9 +155,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fec560ea0006c06fa7a4d33538ac3ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectId: 
   rigidbody: {fileID: 73510882}
   renderer: {fileID: 73510885}
-  linkedPiece: {fileID: 0}
 --- !u!54 &73510882
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -874,9 +874,9 @@ MonoBehaviour:
   m_builderState: {fileID: 277032615}
   m_pieceSpawnPoint: {fileID: 1661298971}
   m_debugStartPieces:
-  - {fileID: 2769078833745418474, guid: 016017567226040e3be086787e5b3296, type: 3}
-  - {fileID: 2769078833745418474, guid: 016017567226040e3be086787e5b3296, type: 3}
-  - {fileID: 2769078833745418474, guid: 016017567226040e3be086787e5b3296, type: 3}
+  - {fileID: 5315101696939080803, guid: 53e265e637b2395e4864134bcaf8fdab, type: 3}
+  - {fileID: 5315101696939080803, guid: 53e265e637b2395e4864134bcaf8fdab, type: 3}
+  - {fileID: 5315101696939080803, guid: 53e265e637b2395e4864134bcaf8fdab, type: 3}
 --- !u!4 &606953364
 Transform:
   m_ObjectHideFlags: 0
@@ -924,6 +924,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b02480f323be8c2cfbdab7234fbc7087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectId: 
   rigidbody: {fileID: 702544189}
   collider: {fileID: 702544190}
   renderer: {fileID: 702544194}
@@ -1398,9 +1399,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d3f8ad23f9e15b8192bbdd0fab3f8a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectId: 
   tags: []
   collider: {fileID: 1347361735}
-  linkedPiece: {fileID: 0}
   m_generators:
   - {fileID: 559619666}
   - {fileID: 1445326227}
@@ -1583,6 +1584,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ec35f80a41b55796b6ca919acafd055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectId: 
   rigidbody: {fileID: 1586480176}
   collider: {fileID: 1586480173}
   renderer: {fileID: 1586480177}

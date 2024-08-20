@@ -181,6 +181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b02480f323be8c2cfbdab7234fbc7087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectId: Stall A
   rigidbody: {fileID: 7712164423654412764}
   collider: {fileID: 5614398188943516507}
   renderer: {fileID: 7188677555530756339}
