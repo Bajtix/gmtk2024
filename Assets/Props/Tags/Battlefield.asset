@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae4bddc18dd4eb168b9939d3f822d743, type: 3}
+  m_Name: Battlefield
+  m_EditorClassIdentifier: 
+  objects:
+  - prop: {fileID: 2007637929574844076, guid: 9761339d5d4f97947ac371a31f131a0e, type: 3}
+    width: 0.99
+  - prop: {fileID: 5557612705030057957, guid: 6610e5b7a2b834e4fa871bdcbbf4570d, type: 3}
+    width: 0.001

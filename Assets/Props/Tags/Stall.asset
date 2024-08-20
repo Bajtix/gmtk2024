@@ -10,20 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ae4bddc18dd4eb168b9939d3f822d743, type: 3}
-  m_Name: Outdoor
+  m_Name: Stall
   m_EditorClassIdentifier: 
   objects:
   - prop: {fileID: 5315101696939080803, guid: 53e265e637b2395e4864134bcaf8fdab, type: 3}
-    width: 5
+    width: 0.001
   - prop: {fileID: 5879904994788455879, guid: b2db627ee92f9974ca60cf0a38c8e09c, type: 3}
-    width: 5
-  - prop: {fileID: 2007637929574844076, guid: 9761339d5d4f97947ac371a31f131a0e, type: 3}
-    width: 0.2
-  - prop: {fileID: 3061557438384109143, guid: 859d9c1a8b8e8d544bd92a6854737491, type: 3}
-    width: 1
-  - prop: {fileID: 6004647540594684836, guid: c43c82453690852418d3c279014d2223, type: 3}
-    width: 5
-  - prop: {fileID: 5789497650301021607, guid: e18a8c1e1f431854f9822acaeef4e3f1, type: 3}
-    width: 0.1
-  - prop: {fileID: 5020690840087002436, guid: ce2a6f7e91453cb43befd790a45be967, type: 3}
-    width: 2
+    width: 0.001
