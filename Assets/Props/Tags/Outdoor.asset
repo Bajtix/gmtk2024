@@ -23,3 +23,5 @@ MonoBehaviour:
     width: 1
   - prop: {fileID: 6004647540594684836, guid: c43c82453690852418d3c279014d2223, type: 3}
     width: 5
+  - prop: {fileID: 5789497650301021607, guid: e18a8c1e1f431854f9822acaeef4e3f1, type: 3}
+    width: 0.5

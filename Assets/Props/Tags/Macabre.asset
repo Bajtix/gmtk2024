@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae4bddc18dd4eb168b9939d3f822d743, type: 3}
+  m_Name: Macabre
+  m_EditorClassIdentifier: 
+  objects:
+  - prop: {fileID: 5789497650301021607, guid: e18a8c1e1f431854f9822acaeef4e3f1, type: 3}
+    width: 0.001
