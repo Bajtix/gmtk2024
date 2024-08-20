@@ -4,8 +4,8 @@ using System.Linq;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour {
-    [SerializeField] private Builder m_buildState;
-    [SerializeField] private Collection m_collectionState;
+    [SerializeField] private BuilderState m_buildState;
+    [SerializeField] private CollectionState m_collectionState;
 
     public void BeginRound() {
         m_buildState.ClearPlate();

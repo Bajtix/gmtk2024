@@ -3,25 +3,15 @@ using System.Collections.Generic;
 using NaughtyAttributes;
 using UnityEngine;
 
-public class Collection : PlayerState {
+public class CollectionState : PlayerState {
     [SerializeField][ReadOnly] private LibraryPiece m_draggedPiece;
     [SerializeField][ReadOnly] private LibraryPiece m_highlightedPiece;
     [SerializeField] private float m_dragStrength = 10;
     [SerializeField] private LayerMask m_mask;
-    [SerializeField][Required] private Builder m_builderState;
+    [SerializeField][Required] private BuilderState m_builderState;
 
     private List<LibraryPiece> m_allPieces = new();
 
-
-    [SerializeField] private Prop[] m_debugStartPieces;
-
-    private void Start() {
-        foreach (var m in m_debugStartPieces) {
-            var piece = ObjectRegistry.GetPiece(m.objectId);
-            Debug.Log("Resolved id " + m.objectId + " to " + piece);
-            SpawnPiece(piece);
-        }
-    }
 
     public LibraryPiece SpawnPiece(Piece p) {
         p = p.Original;
@@ -93,6 +83,11 @@ public class Collection : PlayerState {
             }
         }
 
+    }
+
+    public override void StateEnter(Camera camera) {
+        base.StateEnter(camera);
+        m_builderState.ReturnAllPieces();
     }
 
     public override void StateLeave() {

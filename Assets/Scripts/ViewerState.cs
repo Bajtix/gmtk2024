@@ -1,7 +1,7 @@
 
 using UnityEngine;
 
-public class Crt : PlayerState {
+public class ViewerState : PlayerState {
     public override void StateEnter(Camera camera) {
         base.StateEnter(camera);
     }

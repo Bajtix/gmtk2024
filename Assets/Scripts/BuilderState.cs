@@ -3,13 +3,14 @@ using NaughtyAttributes;
 using UnityEngine;
 using System.Linq;
 
-public class Builder : PlayerState {
+
+public class BuilderState : PlayerState {
     [SerializeField][ReadOnly] private Piece m_previewedPiece;
     [SerializeField][ReadOnly] private Piece m_highlightedPiece;
     [SerializeField][ReadOnly] private float m_rotation;
     [SerializeField] private BuildPlate m_buildPlate;
     [SerializeField] private LayerMask m_mask;
-    [SerializeField][Required] private Collection m_collectionState;
+    [SerializeField][Required] private CollectionState m_collectionState;
 
     private List<Piece> m_allPieces = new List<Piece>();
 
@@ -91,12 +92,16 @@ public class Builder : PlayerState {
         }
     }
 
-    public override void StateLeave() {
-        base.StateLeave();
+    public void ReturnAllPieces() {
         var arr = m_allPieces.Where(w => w.Root is not BuildPlate).ToArray();
         for (int i = 0; i < arr.Length; i++) {
             ReturnPiece(arr[i]);
         }
+    }
+
+    public override void StateLeave() {
+        base.StateLeave();
+
 
         if (m_previewedPiece == null) return;
         m_previewedPiece.EndPreview();
