@@ -72,6 +72,7 @@ public class Builder : PlayerState {
 
     public void SpawnPiece(Piece p) {
         var piece = Instantiate(p.Original.gameObject).GetComponent<Piece>();
+        piece.transform.position = SceneConstants.Instance.BuildPlateSpawner.position;
         m_allPieces.Add(piece);
     }
 

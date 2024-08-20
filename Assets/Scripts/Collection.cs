@@ -9,7 +9,7 @@ public class Collection : PlayerState {
     [SerializeField] private float m_dragStrength = 10;
     [SerializeField] private LayerMask m_mask;
     [SerializeField][Required] private Builder m_builderState;
-    [SerializeField] private Transform m_pieceSpawnPoint;
+
 
     [SerializeField] private Prop[] m_debugStartPieces;
 
@@ -24,7 +24,7 @@ public class Collection : PlayerState {
     public LibraryPiece SpawnPiece(Piece p) {
         p = p.Original;
         var go = Instantiate(p.gameObject);
-        go.transform.position = m_pieceSpawnPoint.position;
+        go.transform.position = SceneConstants.Instance.CollectionSpawner.position;
         var lp = go.AddComponent<LibraryPiece>();
         var pp = go.GetComponent<Piece>();
         lp.renderer = pp.renderer;
