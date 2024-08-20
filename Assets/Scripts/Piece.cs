@@ -10,6 +10,7 @@ public class Piece : MonoBehaviour {
     [Required] public new PieceRenderer renderer;
     private readonly int m_pieceLayer = 6, m_previewLayer = 7;
     public float scoreWeight = 1;
+    public int maxDescendance = 4;
     private float m_rememberedRotation;
 
     [Space(30)][SerializeField][ReadOnly] private List<Piece> m_children = new();
@@ -76,6 +77,8 @@ public class Piece : MonoBehaviour {
     public bool IsClearToBuild(Piece parent) {
         if (parent == null) return false;
         if (parent.Root is not BuildPlate) return false;
+        if (parent.GetDescendanceLevel() > maxDescendance) return false;
+
         foreach (var p in parent.Root.GetAllDescendants().Append(parent.Root)) {
             if (Physics.ComputePenetration(collider, transform.position, transform.rotation, p.collider, p.transform.position, p.transform.rotation, out _, out float dst)) {
                 if (dst > 0.001f) {

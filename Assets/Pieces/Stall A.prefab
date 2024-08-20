@@ -185,6 +185,7 @@ MonoBehaviour:
   collider: {fileID: 5614398188943516507}
   renderer: {fileID: 7188677555530756339}
   scoreWeight: 1
+  maxDescendance: 1
   m_children: []
   m_parent: {fileID: 0}
 --- !u!114 &7188677555530756339
