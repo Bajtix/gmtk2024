@@ -6,6 +6,7 @@ public class Player : MonoBehaviour {
     [SerializeField][ReadOnly] private int m_state = int.MinValue;
     [SerializeField] private PlayerState[] m_states;
     [SerializeField] private float m_transitionSpeed = 6;
+    [SerializeField] private AudioSource woosh;
 
     private PlayerState CurrentState => m_states[m_state];
     private Transform m_stateCameraTransform;
@@ -18,10 +19,11 @@ public class Player : MonoBehaviour {
         m_stateCameraFov = CurrentState.cameraFov;
         m_stateCameraTransform = CurrentState.cameraTransform != null ? CurrentState.cameraTransform : CurrentState.transform;
         CurrentState.StateEnter(m_camera);
+        woosh.Play();
     }
 
     private void Start() {
-        SetState(0, true);
+        SetState(1, true);
     }
 
     private void Update() {
