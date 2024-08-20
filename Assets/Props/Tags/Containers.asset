@@ -10,10 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ae4bddc18dd4eb168b9939d3f822d743, type: 3}
-  m_Name: Fruit
+  m_Name: Containers
   m_EditorClassIdentifier: 
   objects:
-  - prop: {fileID: 2494971324705400217, guid: 3b7016f3314d570ccac3c225fe62a4bf, type: 3}
-    width: 0.006
-  - prop: {fileID: 7335881355405560933, guid: e95507bb6fbe8d743862297067cf6748, type: 3}
+  - prop: {fileID: 5297614531873393077, guid: 6aa4876f57eddae49ba348745edb9d1a, type: 3}
     width: 0.001
