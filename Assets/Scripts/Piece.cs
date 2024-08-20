@@ -12,6 +12,7 @@ public class Piece : MonoBehaviour {
     [Required] public new PieceRenderer renderer;
     private readonly int m_pieceLayer = 6, m_previewLayer = 7;
     public float scoreWeight = 1;
+    public bool symmetric;
     public int maxDescendance = 4;
     private float m_rememberedRotation;
 
