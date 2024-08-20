@@ -11,6 +11,7 @@ public class BuilderState : PlayerState {
     [SerializeField] private BuildPlate m_buildPlate;
     [SerializeField] private LayerMask m_mask;
     [SerializeField][Required] private CollectionState m_collectionState;
+    [SerializeField] private float m_rotationSpeed = 20;
 
     private List<Piece> m_allPieces = new List<Piece>();
 
@@ -68,7 +69,7 @@ public class BuilderState : PlayerState {
             }
         }
 
-        m_buildPlate.transform.Rotate(Vector3.up, 5 * Time.deltaTime * Input.GetAxis("Horizontal"));
+        m_buildPlate.transform.Rotate(Vector3.up, m_rotationSpeed * Time.deltaTime * Input.GetAxis("Horizontal"));
     }
 
     public void SpawnPiece(Piece p) {
