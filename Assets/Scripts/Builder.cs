@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using NaughtyAttributes;
 using UnityEngine;
 
@@ -7,6 +8,8 @@ public class Builder : PlayerState {
     [SerializeField][ReadOnly] private float m_rotation;
     [SerializeField] private BuildPlate m_buildPlate;
     [SerializeField] private LayerMask m_mask;
+
+    private List<Piece> m_allPieces;
 
     public override void StateFixedUpdate() {
         var ray = m_camera.ScreenPointToRay(Input.mousePosition);
@@ -62,11 +65,17 @@ public class Builder : PlayerState {
             }
         }
 
+        m_buildPlate.transform.Rotate(Vector3.up, 5 * Time.deltaTime * Input.GetAxis("Horizontal"));
+    }
+
+    public void SpawnPiece(Piece p) {
+        Instantiate(p.gameObject);
     }
 
     public override void StateLeave() {
         base.StateLeave();
         if (m_previewedPiece == null) return;
+        m_previewedPiece.EndPreview();
         m_previewedPiece.Drop();
         m_previewedPiece = null;
     }

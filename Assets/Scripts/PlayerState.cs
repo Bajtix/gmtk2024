@@ -1,3 +1,4 @@
+using NaughtyAttributes;
 using UnityEngine;
 
 public class PlayerState : MonoBehaviour {
@@ -22,5 +23,18 @@ public class PlayerState : MonoBehaviour {
     public virtual void StateLeave() {
         m_active = false;
         m_camera = null;
+    }
+
+    [Button]
+    private void TestMainCamera() {
+        if (cameraTransform != null) {
+            Camera.main.transform.position = cameraTransform.position;
+            Camera.main.transform.rotation = cameraTransform.rotation;
+        } else {
+            Camera.main.transform.position = transform.position;
+            Camera.main.transform.rotation = transform.rotation;
+        }
+
+        Camera.main.fieldOfView = cameraFov;
     }
 }

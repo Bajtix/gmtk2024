@@ -287,7 +287,8 @@ MonoBehaviour:
   tags:
   - {fileID: 11400000, guid: b73433cf19ac319f5be8f21c71e3780f, type: 2}
   collider: {fileID: 5339206341677761802}
-  linkedPiece: {fileID: 0}
+  linkedPiece: {fileID: 2769078833745418474, guid: 016017567226040e3be086787e5b3296,
+    type: 3}
   m_generators:
   - {fileID: 6438627801394827388}
   - {fileID: 5111160201711207677}
