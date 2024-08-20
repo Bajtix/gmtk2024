@@ -165,9 +165,8 @@ public class Piece : MonoBehaviour {
     }
 
     protected void DropAllChildren() {
-        for (int i = 0; i < m_children.Count; i++) {
-            m_children[0].Drop();
-        }
+        var children = m_children.ToArray();
+        foreach (var w in children) w.Drop();
     }
 
     public virtual void Drop() {
