@@ -3,11 +3,11 @@ using System.Linq;
 using NaughtyAttributes;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(Rigidbody), typeof(PieceRenderer))]
 public class Piece : MonoBehaviour {
-    [SerializeField][Required] private Rigidbody m_rigidbody;
-    [SerializeField] private MeshRenderer m_renderer;
+    [Required] public new Rigidbody rigidbody;
     [Required] public new Collider collider;
+    [Required] public new PieceRenderer renderer;
     private readonly int m_pieceLayer = 6, m_previewLayer = 7;
     public float scoreWeight = 1;
     private float m_rememberedRotation;
@@ -19,6 +19,14 @@ public class Piece : MonoBehaviour {
 
     private void Awake() {
         gameObject.layer = m_pieceLayer;
+
+    }
+
+    private void Start() {
+        if (rigidbody.isKinematic)
+            renderer.SetNormal();
+        else
+            renderer.SetLoose();
     }
 
     public Piece[] GetAllDescendants() {
@@ -65,24 +73,8 @@ public class Piece : MonoBehaviour {
         m_children.Clear();
     }
 
-
-    public virtual void BeginHighlight() {
-
-    }
-
-    public virtual void Highlight() {
-
-    }
-
-    public virtual void EndHighlight() {
-
-    }
-
-    public virtual void BeginPreview() {
-        gameObject.layer = m_previewLayer;
-    }
-
     public bool IsClearToBuild(Piece parent) {
+        if (parent == null) return false;
         if (parent.Root is not BuildPlate) return false;
         foreach (var p in parent.Root.GetAllDescendants().Append(parent.Root)) {
             if (Physics.ComputePenetration(collider, transform.position, transform.rotation, p.collider, p.transform.position, p.transform.rotation, out _, out float dst)) {
@@ -98,12 +90,38 @@ public class Piece : MonoBehaviour {
 
     public virtual void ComputePosition(Piece parent, Vector3 point, Vector3 up, float rotation) {
         var determinedRotation = Quaternion.FromToRotation(Vector3.up, up) * Quaternion.AngleAxis(rotation, Vector3.up);
-        m_rigidbody.MoveRotation(determinedRotation);
-        m_rigidbody.MovePosition(point);
+        rigidbody.MoveRotation(determinedRotation);
+        rigidbody.MovePosition(point);
+    }
+
+
+    public virtual void BeginHighlight() {
+        renderer.SetHighlighted();
+    }
+
+    public virtual void Highlight() {
+
+    }
+
+    public virtual void EndHighlight() {
+        if (rigidbody.isKinematic)
+            renderer.SetNormal();
+        else
+            renderer.SetLoose();
+    }
+
+    public virtual void BeginPreview() {
+        gameObject.layer = m_previewLayer;
     }
 
     public virtual void Preview(Piece parent, Vector3 point, Vector3 up, float rotation) {
         ComputePosition(parent, point, up, rotation);
+
+        if (!IsClearToBuild(parent)) // potentially expensive!
+            renderer.SetInvalid();
+        else
+            renderer.SetNormal();
+
     }
 
     public virtual void EndPreview() {
@@ -119,19 +137,19 @@ public class Piece : MonoBehaviour {
 
         if (!IsClearToBuild(parent)) return false;
 
-        m_rigidbody.isKinematic = true;
+        rigidbody.isKinematic = true;
         parent.Attach(this);
         m_rememberedRotation = rotation;
+        renderer.SetNormal();
 
         return true;
     }
 
     public float GetRememberedRotation() => m_rememberedRotation;
 
-
     public virtual bool Pick() {
         DropAllChildren();
-        m_rigidbody.isKinematic = true;
+        rigidbody.isKinematic = true;
         if (m_parent != null) {
             m_parent.Detach(this);
         }
@@ -147,7 +165,8 @@ public class Piece : MonoBehaviour {
 
     public virtual void Drop() {
         DropAllChildren();
-        m_rigidbody.isKinematic = false;
+        renderer.SetLoose();
+        rigidbody.isKinematic = false;
         if (m_parent != null) {
             m_parent.Detach(this);
         }
@@ -158,8 +177,9 @@ public class Piece : MonoBehaviour {
 
     [Button]
     private void AutoAssignComponents() {
-        if (m_rigidbody == null) m_rigidbody = GetComponent<Rigidbody>();
+        if (rigidbody == null) rigidbody = GetComponent<Rigidbody>();
         if (collider == null) collider = GetComponent<Collider>();
+        if (renderer == null) renderer = GetComponent<PieceRenderer>();
     }
     #endregion
 

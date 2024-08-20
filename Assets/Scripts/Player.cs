@@ -31,12 +31,12 @@ public class Player : MonoBehaviour {
         );
         m_camera.fieldOfView = Mathf.Lerp(m_camera.fieldOfView, m_stateCameraFov, Time.deltaTime * m_transitionSpeed);
 
-        if (Input.GetButtonDown("MoveUp")) {
+        if (Input.GetButtonDown("MoveDown")) {
             if (m_state <= 0) return;
             SetState(m_state - 1);
         }
 
-        if (Input.GetButtonDown("MoveDown")) {
+        if (Input.GetButtonDown("MoveUp")) {
             if (m_state >= m_states.Length - 1) return;
             SetState(m_state + 1);
         }
