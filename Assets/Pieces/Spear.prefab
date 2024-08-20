@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2833347226428312052}
-  - component: {fileID: 6468826065396008813}
   - component: {fileID: 7200610333383851641}
   - component: {fileID: -747521819028558918}
   - component: {fileID: 6141047256887038223}
+  - component: {fileID: -3777752899488740376}
   m_Layer: 0
   m_Name: Spear
   m_TagString: Untagged
@@ -36,29 +36,6 @@ Transform:
   - {fileID: 221268312680283765}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &6468826065396008813
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2157020880314742683}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.2
-  m_Height: 9
-  m_Direction: 0
-  m_Center: {x: 0.1, y: 0.04, z: 0}
 --- !u!54 &7200610333383851641
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -114,12 +91,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectId: Spear
   rigidbody: {fileID: 7200610333383851641}
-  collider: {fileID: 6468826065396008813}
+  collider: {fileID: -3777752899488740376}
   renderer: {fileID: -747521819028558918}
   scoreWeight: 1
   maxDescendance: 4
   m_children: []
   m_parent: {fileID: 0}
+--- !u!65 &-3777752899488740376
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2157020880314742683}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 9, y: 0.3, z: 1}
+  m_Center: {x: 0.1, y: 0.15, z: 0.3}
 --- !u!1001 &331193959838046622
 PrefabInstance:
   m_ObjectHideFlags: 0
