@@ -46,10 +46,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d3f8ad23f9e15b8192bbdd0fab3f8a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectId: Pillory
   tags:
   - {fileID: 11400000, guid: b73433cf19ac319f5be8f21c71e3780f, type: 2}
   collider: {fileID: 697933095263212012}
-  linkedPiece: {fileID: 0}
   m_generators: []
   m_children: []
   m_parent: {fileID: 0}

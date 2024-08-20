@@ -315,7 +315,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b02480f323be8c2cfbdab7234fbc7087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectId: 
+  objectId: Table
   rigidbody: {fileID: 7178917950377268885}
   collider: {fileID: 8704216922856207753}
   renderer: {fileID: 8394652226748460617}

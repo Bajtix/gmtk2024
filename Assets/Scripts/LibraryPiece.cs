@@ -19,6 +19,7 @@ public class LibraryPiece : MonoBehaviour {
 
     private void Start() {
         renderer.SetLoose();
+        gameObject.layer = m_libaryPieceLayer;
     }
 
     public void BeginHighlight() {

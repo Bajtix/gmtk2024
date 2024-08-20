@@ -110,7 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b02480f323be8c2cfbdab7234fbc7087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectId: 
+  objectId: Campfire
   rigidbody: {fileID: 4299998174567183256}
   collider: {fileID: 5862431744709917671}
   renderer: {fileID: -9125185374642076313}

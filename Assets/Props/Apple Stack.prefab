@@ -46,10 +46,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d3f8ad23f9e15b8192bbdd0fab3f8a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectId: Apple Stack
   tags:
   - {fileID: 11400000, guid: b2601af1929d77432a8cb11d0bcc2266, type: 2}
   collider: {fileID: 7541411505978940556}
-  linkedPiece: {fileID: 0}
   m_generators: []
   m_children: []
   m_parent: {fileID: 0}

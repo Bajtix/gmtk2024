@@ -25,13 +25,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3265991807684080055}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.696424, y: 0.12244834, z: 0.12244834, w: 0.696424}
+  m_LocalRotation: {x: 0.0000013858079, y: 0.17316811, z: 0.00000026635823, w: 0.9848923}
   m_LocalPosition: {x: -0.706, y: -0.03, z: 0.233}
   m_LocalScale: {x: 1, y: 0.99999976, z: 0.99999976}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6661382701900482321}
-  m_LocalEulerAnglesHint: {x: 70.056, y: 90, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 19.944, z: 0}
 --- !u!114 &1151738412516553492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59,10 +59,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6661382701900482321}
-  - component: {fileID: 1559751376540304056}
   - component: {fileID: -6689064825585566290}
   - component: {fileID: 1193226769013324913}
   - component: {fileID: -6351821332002868600}
+  - component: {fileID: 4993682827123293339}
   m_Layer: 0
   m_Name: Fruit Basket
   m_TagString: Untagged
@@ -89,28 +89,6 @@ Transform:
   - {fileID: 1044042572232252075}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1559751376540304056
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3520768109565931170}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4976957901415362066, guid: 03f637c3aa6c1cb359d8f1f125e47897, type: 3}
 --- !u!54 &-6689064825585566290
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -164,14 +142,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b02480f323be8c2cfbdab7234fbc7087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectId: 
+  objectId: Fruit Basket
   rigidbody: {fileID: -6689064825585566290}
-  collider: {fileID: 1559751376540304056}
+  collider: {fileID: 4993682827123293339}
   renderer: {fileID: 1193226769013324913}
   scoreWeight: 1
   maxDescendance: 4
   m_children: []
   m_parent: {fileID: 0}
+--- !u!65 &4993682827123293339
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3520768109565931170}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.4736705, y: 0.14540227, z: 1.0534995}
+  m_Center: {x: 0, y: 0.084018774, z: -0.032540858}
 --- !u!1 &5360584599330135472
 GameObject:
   m_ObjectHideFlags: 0
@@ -197,13 +196,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5360584599330135472}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.7050884, y: 0.05338891, z: 0.05338891, w: 0.7050884}
+  m_LocalRotation: {x: 0.000001475215, y: 0.07550332, z: 0.000000110827386, w: 0.9971456}
   m_LocalPosition: {x: 0.813, y: -0.03, z: 0.233}
   m_LocalScale: {x: 1, y: 0.99999976, z: 0.99999976}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6661382701900482321}
-  m_LocalEulerAnglesHint: {x: 98.66, y: -90, z: -90}
+  m_LocalEulerAnglesHint: {x: 180, y: -171.34, z: -180}
 --- !u!114 &8555018672233510493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247,13 +246,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9176732970212018690}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.7033999, y: -0.072308734, z: -0.072308734, w: 0.7033999}
+  m_LocalRotation: {x: 0.0000015199182, y: -0.10226, z: -0.00000014714895, w: 0.9947577}
   m_LocalPosition: {x: -0.022, y: -0.03, z: 0.233}
   m_LocalScale: {x: 1, y: 0.99999976, z: 0.99999976}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6661382701900482321}
-  m_LocalEulerAnglesHint: {x: 78.261, y: -90, z: -90}
+  m_LocalEulerAnglesHint: {x: 0, y: -11.739, z: 0}
 --- !u!114 &4952977054300412588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -298,27 +297,27 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: b3e89f8b78d2bda939b077631d05bd49,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.70710784
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b3e89f8b78d2bda939b077631d05bd49,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0.70710576
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b3e89f8b78d2bda939b077631d05bd49,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b3e89f8b78d2bda939b077631d05bd49,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b3e89f8b78d2bda939b077631d05bd49,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b3e89f8b78d2bda939b077631d05bd49,
         type: 3}
