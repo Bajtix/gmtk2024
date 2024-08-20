@@ -14,10 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objects:
   - prop: {fileID: -1040076918754523051, guid: 503de70f15879424a9b8a3732f51211d, type: 3}
-    width: 1
-  - prop: {fileID: 7741193907703279835, guid: 91b1e960350b3844cb69a3cec13ea361, type: 3}
-    width: 0.5
-  - prop: {fileID: 804433870864940230, guid: 6aec143396872d64088dfc2256bf6496, type: 3}
     width: 2
-  - prop: {fileID: 2336103779390351533, guid: 6ee309d49cb1b1e47b196b2253a15a60, type: 3}
+  - prop: {fileID: 7741193907703279835, guid: 91b1e960350b3844cb69a3cec13ea361, type: 3}
     width: 1
+  - prop: {fileID: 804433870864940230, guid: 6aec143396872d64088dfc2256bf6496, type: 3}
+    width: 4
+  - prop: {fileID: 2336103779390351533, guid: 6ee309d49cb1b1e47b196b2253a15a60, type: 3}
+    width: 2
+  - prop: {fileID: 4267822987142380537, guid: 6a0ce88de13e06b48be610b569816541, type: 3}
+    width: 0.1

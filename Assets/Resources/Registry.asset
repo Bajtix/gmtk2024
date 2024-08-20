@@ -79,3 +79,7 @@ MonoBehaviour:
     prop: {fileID: 5297614531873393077, guid: 6aa4876f57eddae49ba348745edb9d1a, type: 3}
     piece: {fileID: -6351821332002868600, guid: df420b388da58034c9dd88f921e8fa88,
       type: 3}
+  - name: Blade
+    prop: {fileID: 4267822987142380537, guid: 6a0ce88de13e06b48be610b569816541, type: 3}
+    piece: {fileID: -3142216084647137252, guid: 9ee6ce5dda8395343b9db0c292716f77,
+      type: 3}
