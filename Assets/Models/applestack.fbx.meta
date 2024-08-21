@@ -3,11 +3,21 @@ guid: 265765d6645b8fb489a57b77b2baa561
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fruit Red
+    second: {fileID: 2100000, guid: e24331adde755b5eeb9a27a98ba896cc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fruit Stem
+    second: {fileID: 2100000, guid: 28000f6c4d8c71ef78bf5aa46f755f13, type: 2}
   materials:
     materialImportMode: 2
-    materialName: 0
-    materialSearch: 1
+    materialName: 1
+    materialSearch: 2
     materialLocation: 1
   animations:
     legacyGenerateAnimations: 4

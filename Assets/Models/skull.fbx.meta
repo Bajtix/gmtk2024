@@ -3,11 +3,16 @@ guid: f43aad626852e664091f6974efc5ab28
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bone
+    second: {fileID: 2100000, guid: 0a9f1193f5903cc1eb96db858b169bbb, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
-    materialSearch: 1
+    materialSearch: 2
     materialLocation: 1
   animations:
     legacyGenerateAnimations: 4

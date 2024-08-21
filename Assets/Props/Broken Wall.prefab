@@ -46,10 +46,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d3f8ad23f9e15b8192bbdd0fab3f8a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectId: Broken Wall
   tags:
   - {fileID: 11400000, guid: 96965e5fdb16d974d888044a9e2979d4, type: 2}
   collider: {fileID: 1913171520244108609}
-  linkedPiece: {fileID: 0}
   m_generators: []
   m_children: []
   m_parent: {fileID: 0}
@@ -135,8 +135,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 8507789265930873676, guid: 83ab844d76731f74aaec06f10fffa788, type: 3}
-  - {fileID: -413546653603027153, guid: 83ab844d76731f74aaec06f10fffa788, type: 3}
+  - {fileID: 2100000, guid: 8d6dd802d23f31a09a0ff5ece1c7939b, type: 2}
+  - {fileID: 2100000, guid: 8d3fe1a2bb140a8aab9d7142998e254f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

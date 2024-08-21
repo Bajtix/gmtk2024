@@ -3,7 +3,52 @@ guid: 03f637c3aa6c1cb359d8f1f125e47897
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bone
+    second: {fileID: 2100000, guid: 0a9f1193f5903cc1eb96db858b169bbb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Concrete
+    second: {fileID: 2100000, guid: 8d6dd802d23f31a09a0ff5ece1c7939b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Concrete Light
+    second: {fileID: 2100000, guid: 8d3fe1a2bb140a8aab9d7142998e254f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fruit Red
+    second: {fileID: 2100000, guid: e24331adde755b5eeb9a27a98ba896cc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fruit Stem
+    second: {fileID: 2100000, guid: 28000f6c4d8c71ef78bf5aa46f755f13, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fruit Yellow
+    second: {fileID: 2100000, guid: bcb067a9dd80d5e91bdc1c012272403a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal
+    second: {fileID: 2100000, guid: 1ffd0e76b9b25fc0daabb0e29419cfc8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wood Dark
+    second: {fileID: 2100000, guid: 0079459caf0761d9d8461c701cca07df, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wood Light
+    second: {fileID: 2100000, guid: bd1fa6ae0639cf9e1998ff4fa4d0bd27, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
